@@ -1,3 +1,4 @@
+/*
 //Comparar dos números y determinar si son iguales
 n1=prompt("Ingresa el primer número")
 n2=prompt("Ingresa el segundo número")
@@ -37,14 +38,13 @@ l3=prompt("Ingresar el lado3 del triangulo")
 
 if((l1 == l2)  && (l2 == l3) || (l3==l1) && (l2==l3)){
     alert(`El triangulo es Equilatero ya que todos sus lados son iguales: ${l1}, ${l2}, ${l3}`)
-}else if ((l2!=l3) && (l1!=l2) || (l1=!l2) && (l2!=l3)){
+}else if ((l2!=l3) && (l1!=l2) || (l1!=l2) && (l2!=l3)){
     alert(`El triangulo es Escaleno ya que todos sus lados son desiguales: ${l1}, ${l2}, ${l3}`)
 }else{
     alert(`El triangulo es Isosceles ya que 2 de sus lados son iguales y uno desigual: ${l1}, ${l2}, ${l3}`)
 }    
     
-//Edad de jubilación, determina si una persona puede jubilarse o no
-//Hombres: haber cumplido 62 años. Mujeres: Haber cumplido 57 años.
+//Edad de jubilación, determina si una persona puede jubilarse o no : Hombres: haber cumplido 62 años / Mujeres: Haber cumplido 57 años.
 genero=prompt("Ingresar el genero de la persona a jubilar: hombre / mujer")
 edad=prompt("Ingresar edad de la persona")
 if(genero==='mujer'){
@@ -59,10 +59,10 @@ if(genero ==='hombre'){
 }else{
     alert(`La persona cuyo genero es: ${genero}, no se puede jubilar ya que su edad es: ${edad}`)
 }
-
+*/
 //Dia laboral: determina si es día laboral o fin de semana
+fecha=prompt("Dígita la fecha que quieres averiguar en formato AAAA-MM-DD")
+fecha_act=new Date(fecha)
+fecha_ac=(fecha_act.toISOString())
 
-fecha=prompt("Dígita el día que quieres averiguar")
-fecha_conv= new Date(fecha)
-console.log(fecha)
-    
+
