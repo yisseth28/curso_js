@@ -60,5 +60,9 @@ if(genero ==='hombre'){
     alert(`La persona cuyo genero es: ${genero}, no se puede jubilar ya que su edad es: ${edad}`)
 }
 
+//Dia laboral: determina si es día laboral o fin de semana
 
+fecha=prompt("Dígita el día que quieres averiguar")
+fecha_conv= new Date(fecha)
+console.log(fecha)
     
