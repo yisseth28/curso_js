@@ -18,17 +18,17 @@
             width: 50%;
         }
     </style>
-    <form action="">
+    <form id="miformulario">
         <table border="1">
             <tr>
-                <th colspan="2"> CONVERSOR DE TEMPEATURA </th>
+                <th colspan="2"> CONVERSOR DE TEMPERATURA </th>
             </tr>
             <tr>
                 <td>
                     Temperatura
                 </td>
                 <td>
-                    <input type="text">
+                    <input type="text" id="valor">
                 </td>
             </tr>
             <tr>
@@ -36,7 +36,7 @@
                     De:
                 </td>
                 <td>
-                    <select  id="temp" name="temp">
+                    <select  id="temp1" name="temp1">
                         <option value="1">Farenheit(°F)</option>
                         <option value="2">Celsius(°C)</option>
                         <option value="3">Kelvin(K)</option>
@@ -48,7 +48,7 @@
                     A:
                 </td>
                 <td>
-                    <select  id="temp" name="temp">
+                    <select  id="temp2" name="temp2">
                         <option value="1">Farenheit(°F)</option>
                         <option value="2">Celsius(°C)</option>
                         <option value="3">Kelvin(K)</option>
@@ -57,11 +57,50 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <textarea rows="10" cols="50"></textarea>
+                    <button id="enviar" onclick="calcular()">Ejecutar</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea rows="10" cols="50" id="resultado"></textarea>
                 </td>
                             
             </tr>
         </table>
+        <script>
+            document.getElementById('enviar').addEventListener('click', function(event){
+            // Evitar que el formulario se envíe y la página se recargue
+            event.preventDefault();
+            });
+            
+            function calcular(){
+                const valor=parseInt(document.getElementById('valor').value);
+                const temp1=document.getElementById('temp1').value;
+                const temp2=document.getElementById('temp2').value;
+                if(temp1==temp2){
+                    alert("Ingresa dos Escalas de temperatura distintos");
+                }
+                if(temp1==1 && temp2==2){
+                    alert("Conversion no disponible");
+                }else if (temp1==1 && temp2==3){
+                    respuesta=(5*(valor-32)/9+273.15);
+                    document.getElementById('resultado').textContent=respuesta;
+                }
+                if(temp1==2 && temp2==1){
+                    alert("Conversion no disponible");
+                }else if(temp1==2 && temp2==3){
+                    respuesta=(valor+273.15);
+                    document.getElementById('resultado').textContent=respuesta;
+                } 
+                if (temp1==3 && temp2==2){
+                    respuesta=(valor-273.15);
+                    document.getElementById('resultado').textContent=respuesta;
+                }else if(temp1==3 && temp2==1){
+                    respuesta=(9*(valor-273.15)/5)+32;
+                    document.getElementById('resultado').textContent=respuesta;
+                }
+            }
+        </script>
     </form>
     
 </body>
