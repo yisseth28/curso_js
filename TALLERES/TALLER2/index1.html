@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números aleatorios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .div{
+        background-color:#FFF9D0;
+        width: 50%;
+        height: 50%;
+        padding: 20px;
+        margin: 0 auto;
+    }
+    .encabezado{
+        padding: 20px;
+        background-color: #CAF4FF;
+    }
+    .titulo{
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-style: italic;
+        font-size: 20px;
+    }
+    .input{
+        text-align: center;
+    }
+    .textarea{
+        text-align: center;
+        padding: 10px;
+    }
+    .dados{
+        padding: 20px;
+        text-align: center;
+    }
+    .dado{
+        width: 100px;
+        height: 100px;
+        animation: shake 1s infinite;
+        display: inline-block;
+    }
+    @keyframes shake{
+        5%{transform: rotate(0deg);}
+        35%{transform: rotate(-10deg);}
+        10%{transform: rotate(10deg);}
+        85%{transform: rotate(-10deg);}
+        100%{transform: rotate(10deg);}
+    }
+    .boton{
+        text-align: center;
+        padding: 20px;
+    }
+    .botom{
+        padding: 10px;
+        background-color: #CAF4FF;
+        cursor: pointer;
+        border-radius: 10px;
+
+    }
+    .parrafo{
+        text-align: center;
+        padding: 10px;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+</style>
+<body>
+    <form action="">
+        <div class="div">
+            <div class="encabezado">
+                <h1 class="titulo">ADIVINA EL NÚMERO</h1>
+            </div>
+            <!-- Agregar los dados aquí, despues del título-->
+             <div class="dados">
+                <img src="dado.png" alt="dado" class="dado">
+             </div>
+            <p class="parrafo"> Es muy fácil, sólo debes adivinar el número que estoy pensando desde el <b>10</b> hasta el <b>70</b></p>
+            <div class="input">
+                <input type="number" name="numero" id="numero" placeholder="Escribe un número">
+            </div>
+            <div class="boton">
+                <button class="botom" type="button" id="boton" onclick="adivinar()">¡Adivinar!</button>
+            </div>
+            <div class="textarea">
+                <textarea name="resultado" id="resultado" cols="20" rows="10"></textarea>
+            </div>
+        </div>
+    </form>
+    <script>
+        function adivinar(){
+            const numero=parseInt(document.getElementById('numero').value);
+            const resultado=parseInt(Math.random() * (70-10))+10;
+            //document.getElementById('resultado').value=resultado;
+            if(numero==resultado){
+                document.getElementById('resultado').value="¡Felicidades! Has adivinado el número";
+            }else{
+                document.getElementById('resultado').value="¡Lo siento! El número que estaba pensando era: "+resultado;
+            }
+        }
+
+    </script>
+</body>
+</html>
