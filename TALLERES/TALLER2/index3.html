@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>piedra, papel, tijera, lagarto o spock</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<style>
+    .parrafo{
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        
+    }
+    .div{
+        padding: 10px;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background-color: #a3b18a;
+        height: 100%;
+        width: 100%;
+
+    }
+    .encabezado{
+        background-color: #496f5d;
+    }
+    .titulo{
+        color: #fff;
+        text-align: center;
+    }
+    .contenedor-botones{
+        position: relative;
+        width: 20%;
+        height: 300%;
+        margin: 50px auto;
+    }
+    .boton{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        background: white;
+    }
+    .boton1{
+        transform: translate(187%, -69%);
+    }
+    .boton2{
+        transform: translate(10%, 15%);
+    }
+    .boton3{
+        transform: translate(-12%, 84%);
+    }
+    .boton4{
+        transform: translate(-20%, 61%);
+    }
+    .boton5{
+        transform: translate(-148%, -43%);
+    }
+
+</style>
+<body>
+    <div class="div">
+        <div class="encabezado">
+            <h1 class="titulo">PIEDRA, PAPEL, TIJERA, LAGARTO O SPOCK</h1>
+        </div>
+        <div class="parrafo">
+            <p>Elige una opción y veremos quien gana:</b></p>
+            <p><b>PIEDRA, PAPEL, TIJERA, LAGARTO O SPOCK</b></p>
+            <p>REGLAS: Piedra gana a Tijera, Tijera gana a Papel, Papel gana a Piedra, Piedra gana a Lagarto, Lagarto gana a Spock, Spock gana a Tijera, Tijera gana a Lagarto y Lagarto gana a Papel</b></p>
+        </div>
+        <div class="contenedor-botones">
+            <button class="boton boton1" id="piedra">PIEDRA</button>
+            <button class="boton boton2"  id="tijera">TIJERA</button>
+            <button class="boton boton3" id="papel">PAPEL</button>
+            <button class="boton boton4" id="lagarto">LAGARTO</button>
+            <button class="boton boton5" id="spock">SPOCK</button>
+        </div>
+       <div class="contenedor-resultado">
+
+       </div>
+    </div>
+</body>
+</html>
