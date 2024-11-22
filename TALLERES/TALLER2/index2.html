@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>piedra, papel, tijera, lagarto o spock</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<style>
+    .parrafo{
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        
+    }
+    .div{
+        padding: 10px;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background-color: #a3b18a;
+        height: 100%;
+        width: 70%;
+
+    }
+    .encabezado{
+        background-color: #496f5d;
+    }
+    .titulo{
+        color: #fff;
+        text-align: center;
+    }
+    .contenedor-botones{
+        position: relative;
+        width: 20%;
+        height: 300%;
+        margin: 50px auto;
+    }
+    .boton{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        background: white;
+        opacity: 0;
+        
+      
+    }
+    .boton1{
+        transform:translate(296%, -154%);
+    }
+    .boton2{
+        transform: translate(89%, -462%);
+    }
+    .boton3{
+        transform: translate(140%, -343%);
+    }
+    .boton4{
+        transform: translate(-221%, -156%);
+    }
+    .boton5{
+        transform: translate(40%, -437%);
+    }
+    .juego{
+        width: 300px;
+        height: 300px;
+    }
+    .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .boton-jugar{
+        align-self: center;
+    }
+
+</style>
+<body>
+    <form action="" class="form">
+        <div class="div">
+            <div class="encabezado">
+                <h1 class="titulo">PIEDRA, PAPEL, TIJERA, LAGARTO O SPOCK</h1>
+            </div>
+            <div class="parrafo">
+                <p>Elige una opción y veremos quien gana:</b></p>
+                <p><b>PIEDRA, PAPEL, TIJERA, LAGARTO O SPOCK</b></p>
+                <p><b>REGLAS:</b> Piedra gana a Tijera, Tijera gana a Papel, Papel gana a Piedra, Piedra gana a Lagarto, Lagarto gana a Spock, Spock gana a Tijera, Tijera gana a Lagarto y Lagarto gana a Papel</p>
+            </div>
+            <div class="contenedor-botones">
+                <img src="juego.png" alt="juego" class="juego">
+                <button class="boton boton1" id="piedra" onclick="jugar(this.id)">PIEDRA</button>
+                <button class="boton boton2" id="tijera" onclick="jugar(this.id)">TIJERA</button>
+                <button class="boton boton3" id="papel" onclick="jugar(this.id)">PAPEL</button>
+                <button class="boton boton4" id="lagarto" onclick="jugar(this.id)">LAGARTO</button>
+                <button class="boton boton5" id="spock" onclick="jugar(this.id)">SPOCK</button>
+            </div>            
+            <script>
+                function getRandomFromArray(array){
+                    return array[Math.floor(Math.random() * array.length)];
+                }
+
+                function jugar(jugador){
+                    const opciones=["piedra", "tijera", "papel", "lagarto", "spock"];
+                    let seleccion= getRandomFromArray(opciones);
+                    if(jugador==seleccion){
+                        alert("Empate");
+                    }else if(jugador=="piedra" && seleccion=="tijera" || jugador=="tijera" && seleccion=="papel" || jugador=="papel" && seleccion=="piedra" || jugador=="piedra" && seleccion=="lagarto" || jugador=="lagarto" && seleccion=="spock" || jugador=="spock" && seleccion=="tijera" || jugador=="tijera" && seleccion=="lagarto" || jugador=="lagarto" && seleccion=="papel"){
+                    alert("Ganaste");
+                    }else{
+                    alert("Perdiste");
+                    }
+                }
+            </script>
+        </div>
+    </form>
+</body>
+</html>
