@@ -94,7 +94,10 @@
                 <button class="boton boton3" id="papel" onclick="jugar(this.id)">PAPEL</button>
                 <button class="boton boton4" id="lagarto" onclick="jugar(this.id)">LAGARTO</button>
                 <button class="boton boton5" id="spock" onclick="jugar(this.id)">SPOCK</button>
-            </div>            
+            </div>
+            <div>
+
+            </div>         
             <script>
                 function getRandomFromArray(array){
                     return array[Math.floor(Math.random() * array.length)];
@@ -106,7 +109,7 @@
                     if(jugador==seleccion){
                         alert("Empate");
                     }else if(jugador=="piedra" && seleccion=="tijera" || jugador=="tijera" && seleccion=="papel" || jugador=="papel" && seleccion=="piedra" || jugador=="piedra" && seleccion=="lagarto" || jugador=="lagarto" && seleccion=="spock" || jugador=="spock" && seleccion=="tijera" || jugador=="tijera" && seleccion=="lagarto" || jugador=="lagarto" && seleccion=="papel"){
-                    alert("Ganaste");
+                    alert("Ganaste", );
                     }else{
                     alert("Perdiste");
                     }
