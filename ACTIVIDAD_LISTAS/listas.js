@@ -14,3 +14,5 @@ verduras.sort();
 verduras.pop();
 const verdurasMayusculas=verduras.map(verduras=>verduras.toUpperCase());
 console.log(verdurasMayusculas);
+
+
